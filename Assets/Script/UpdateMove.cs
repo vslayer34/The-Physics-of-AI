@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class UpdateMove : MonoBehaviour
 {
+    public float speed;
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(0.0f, 0.0f, 0.1f);
+        float velocity = Time.deltaTime * speed;
+        transform.Translate(0.0f, 0.0f, velocity);
     }
 }
