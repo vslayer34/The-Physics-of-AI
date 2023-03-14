@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &195463072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1571149760, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+  m_PrefabInstance: {fileID: 1354003426666338538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &216710199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +527,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1660947299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+  m_PrefabInstance: {fileID: 1354003426666338538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660947303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660947299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6263beaf781c14d47be6defa77e81663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5109268076672165372, guid: 81ae28c4807d1a3419467eae4d65cb62, type: 3}
+  turret: {fileID: 195463072}
+  enemy: {fileID: 620903246}
+  turretBase: {fileID: 2125803696}
+--- !u!4 &2125803696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6880403096463785013, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+  m_PrefabInstance: {fileID: 1354003426666338538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1354003426666338538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,6 +564,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 620903246}
+    - target: {fileID: 96212754, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5109268076672165372, guid: 81ae28c4807d1a3419467eae4d65cb62, type: 3}
     - target: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       propertyPath: m_Name
       value: Tank
