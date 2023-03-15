@@ -10,7 +10,7 @@ public class FireShellModified : MonoBehaviour {
     public Transform turretBase;
 
     float rotationSpeed = 4.0f;
-    float shellSpeed = 15.0f;
+    public float shellSpeed = 15.0f;
 
     void Update()
     {
@@ -29,14 +29,16 @@ public class FireShellModified : MonoBehaviour {
 
     void CreateBullet()
     {
-        Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        GameObject shell = Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        shell.GetComponent<Rigidbody>().velocity = shellSpeed * turretBase.forward;
     }
 
     float? CalculateAngle(bool low)
     {
+        float errorFactor = 1.0f;
         Vector3 targetDirection = enemy.transform.position - transform.position;
         float y = targetDirection.y = 0.0f;
-        float x = targetDirection.magnitude;
+        float x = targetDirection.magnitude - errorFactor;
         float gravity = 9.8f;
         float speedSqrt = shellSpeed * shellSpeed;
         float underTheRoot = (Mathf.Pow(speedSqrt, 2)) - (gravity * (gravity * Mathf.Pow(x, 2) + 2 * y * speedSqrt));
