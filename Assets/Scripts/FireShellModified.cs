@@ -11,6 +11,7 @@ public class FireShellModified : MonoBehaviour {
 
     float rotationSpeed = 4.0f;
     public float shellSpeed = 15.0f;
+    public float speed = 2.0f;
 
     void Update()
     {
@@ -20,10 +21,14 @@ public class FireShellModified : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(rotationVector);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
 
-        RotateTurret();
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        RotateTurret(out float? angle);
+        if (angle != null) 
         {
             CreateBullet();
+        }
+        else
+        {
+            transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
         }
     }
 
@@ -59,9 +64,9 @@ public class FireShellModified : MonoBehaviour {
             return null;
     }
 
-    void RotateTurret()
+    void RotateTurret(out float? angle)
     {
-        float? angle = CalculateAngle(true);
+        angle = CalculateAngle(true);
         if (angle != null)
         {
             turretBase.localEulerAngles = new Vector3(360.0f - (float)angle, 0.0f, 0.0f);
